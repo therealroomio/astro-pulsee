@@ -1,0 +1,17 @@
+{
+	"extends": "astro/tsconfigs/base",
+	"compilerOptions": {
+		"strictNullChecks": true,
+		"baseUrl": "src",
+		"paths": {
+			"@lib/*": ["lib/*"],
+			"@config/*": ["config/*"],
+			"@utils/*": ["utils/*"],
+			"@components/*": ["components/*"],
+			"@layouts/*": ["layouts/*"],
+			"@assets/*": ["assets/*"],
+			"@pages/*": ["pages/*"]
+		},
+		"types": ["vite-plugin-pwa/info"]
+	}
+}
