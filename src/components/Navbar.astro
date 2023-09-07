@@ -5,7 +5,7 @@ import logo from "assets/logo.svg";
 
 let contactSections = [
 	{
-		title: "Atlas benefits",
+		title: "Zank benefits",
 		href: "#",
 		links: [
 			{
@@ -35,7 +35,7 @@ let contactSections = [
 		href: "#",
 		links: [
 			{
-				title: "Atlas benefits",
+				title: "Zank benefits",
 				href: "/#benefits",
 			},
 			{
@@ -54,11 +54,11 @@ let contactSections = [
 			},
 			{
 				title: "Twitter",
-				href: "https://twitter.com/atlascardhq",
+				href: "https://twitter.com",
 			},
 			{
 				title: "Instagram",
-				href: "https://instagram.com/atlascardhq",
+				href: "https://instagram.com",
 			},
 		],
 	},
@@ -70,6 +70,7 @@ let contactSections = [
 	class="select-none px-8 w-full max-w-[55rem] cursor-pointer overflow-hidden z-10 fixed top-4 -translate-x-1/2 left-1/2">
 	<div
 		@click="toggleOpenMenu()"
+		@click.away="menuOpen = false"
 		:class="{ 'open': menuOpen }"
 		class="rounded-lg cursor-pointer overflow-hidden transform transition-all duration-300 ease-in-out">
 		<div class="flex justify-between py-2 px-4 items-center">
