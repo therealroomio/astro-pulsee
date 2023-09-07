@@ -20,25 +20,25 @@
 /* Custom scrollbar */
 ::-webkit-scrollbar-track {
 	border: none;
-	background-color: white;
+	background-color: #d4d4d8;
 }
 
 ::-webkit-scrollbar {
-	width: 10px;
-	background-color: white;
+	width: 8px;
+	background-color: #d4d4d8;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #000000;
+	background-color: hsl(0, 0%, 50%);
 }
 .dark {
 	::-webkit-scrollbar-track {
 		border: none;
-		background-color: rgb(12 10 9);
+		background-color: hsl(0, 0%, 50%);
 	}
 	::-webkit-scrollbar {
-		width: 10px;
-		background-color: rgb(12 10 9);
+		width: 8px;
+		background-color: hsl(0, 0%, 50%);
 	}
 	::-webkit-scrollbar-thumb {
 		background-color: white;

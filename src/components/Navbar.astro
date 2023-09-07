@@ -1,0 +1,144 @@
+---
+import Link from "@components/Link.astro";
+import { Image } from "astro:assets";
+import logo from "assets/logo.svg";
+
+let contactSections = [
+	{
+		title: "Atlas benefits",
+		href: "#",
+		links: [
+			{
+				title: "Dining",
+				href: "/#supper-club",
+			},
+			{
+				title: "Travel",
+				href: "/#travel",
+			},
+			{
+				title: "Card",
+				href: "/#card",
+			},
+			{
+				title: "App",
+				href: "/#app",
+			},
+			{
+				title: "Concierge",
+				href: "/#concierge",
+			},
+		],
+	},
+	{
+		title: "Benefits",
+		href: "#",
+		links: [
+			{
+				title: "Atlas benefits",
+				href: "/#benefits",
+			},
+			{
+				title: "Visa Infinite",
+				href: "/visa-infinite",
+			},
+		],
+	},
+	{
+		title: "Contact",
+		href: "#",
+		links: [
+			{
+				title: "Email",
+				href: "mailto:",
+			},
+			{
+				title: "Twitter",
+				href: "https://twitter.com/atlascardhq",
+			},
+			{
+				title: "Instagram",
+				href: "https://instagram.com/atlascardhq",
+			},
+		],
+	},
+];
+---
+
+<nav
+	x-data="{menuOpen: false, toggleOpenMenu: function() { this.menuOpen = !this.menuOpen; }}"
+	class="select-none px-8 w-full max-w-[50rem] cursor-pointer overflow-hidden z-10 fixed top-4 -translate-x-1/2 left-1/2">
+	<div
+		@click="toggleOpenMenu()"
+		:class="menuOpen ? 'max-h-[100rem]': 'max-h-[2.95rem]'"
+		class="rounded-lg cursor-pointer overflow-hidden transform transition duration-300 ease-in-out">
+		<div class="flex justify-between py-2 px-4 items-center">
+			<div class="text-neutral-100" style="transform: none;">
+				<Image class="inline-block text-slate-50" src={logo} alt="Logo" width={35} height={35} />
+			</div>
+			<div class="text-neutral-400" style="transform: none;">
+				<svg
+					class="transform transition duration-300"
+					:class="menuOpen ? 'rotate-45': ''"
+					fill="currentColor"
+					height="24"
+					viewBox="0 0 24 24"
+					width="24"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M12 24L12 0" stroke="currentColor" stroke-width="1"></path>
+					<path d="M24 12H0" stroke="currentColor" stroke-width="1"></path>
+				</svg>
+			</div>
+		</div>
+		<div class="bg-alpha-200 border-t border-t-slate-400 border-opacity-25 mb-12"></div>
+		<div class="flex flex-row gap-16 mx-8 uppercase overflow-x-auto pb-6">
+			{
+				contactSections.map((cs) => (
+					<div class="flex flex-col gap-8 text-sm font-mono">
+						<div class="flex flex-col gap-10 items-start">
+							<Link class="text-alpha-100 text-slate-600" href={cs.href}>
+								{cs.title}
+							</Link>
+						</div>
+						{cs.links.map((link) => (
+							<div>
+								<a href={link.href}>{link.title}</a>
+							</div>
+						))}
+					</div>
+				))
+			}
+		</div>
+		<div class="mb-5 text-sm font-mono uppercase">
+			<div class="bg-alpha-200 border-t border-t-slate-400 border-opacity-25 mb-4"></div>
+			<div class="px-8 text-alpha-100 top-[18px] left-8">2023 © yourcompany.</div>
+		</div>
+	</div>
+</nav>
+
+<style>
+	nav > div {
+		-webkit-backdrop-filter: blur(36px);
+		backdrop-filter: blur(36px);
+		background-color: hsla(0, 0%, 94%, 0.322);
+		border-radius: 1rem;
+		box-shadow: 2px 4px 20px #0000000a;
+		transition: all 0.3s ease-out;
+	}
+</style>
+
+<style is:global>
+	nav {
+		::-webkit-scrollbar-track {
+			border: none;
+			background-color: transparent;
+		}
+		::-webkit-scrollbar {
+			height: 1px;
+			background-color: transparent;
+		}
+		::-webkit-scrollbar-thumb {
+			background-color: #777;
+		}
+	}
+</style>
