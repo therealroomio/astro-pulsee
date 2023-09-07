@@ -1,7 +1,7 @@
 ---
 import { SEO } from "astro-seo";
-import Footer from "@components/footer.astro";
-import Navbar from "@components/navbar.astro";
+import Footer from "@components/Footer.astro";
+import Navbar from "@components/Navbar.astro";
 import { HeadHrefLangs } from "astro-i18next/components";
 import i18next from "i18next";
 import { pwaInfo } from "virtual:pwa-info";
@@ -22,7 +22,7 @@ const { title, lang = null } = Astro.props;
 const makeTitle = title ? title + " | " + "Astro starter" : "Astro starter template with Tailwind CSS and alpine js";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={lang ?? i18next.language}>
 	<head>
 		<meta charset="UTF-8" />
@@ -57,7 +57,7 @@ const makeTitle = title ? title + " | " + "Astro starter" : "Astro starter templ
 		{pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
 		<script src="/src/pwa.ts"></script>
 	</head>
-	<body>
+	<body class="bg-zinc-300">
 		<Navbar />
 		<slot />
 		<Footer />

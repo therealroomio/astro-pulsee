@@ -1,8 +1,19 @@
 ---
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
 
 changeLanguage("en");
 ---
 
-<Layout>Main content here</Layout>
+<Layout>
+	<Container>
+		<div class="h-screen">Main content here</div>
+	</Container>
+	<Container class="bg-neutral-900">
+		<div class="h-screen">Main content here</div>
+	</Container>
+	<Container class="stone-100">
+		<div class="h-screen">Main content here</div>
+	</Container>
+</Layout>
