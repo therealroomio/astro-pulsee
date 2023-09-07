@@ -7,6 +7,21 @@ module.exports = {
 			fontFamily: {
 				sans: ["Inter Variable", "Inter", ...defaultTheme.fontFamily.sans],
 			},
+			colors: {
+				alpha: {
+					50: "rgba(0,0,0, .05",
+					100: "rgba(0,0,0,.12)",
+					200: "rgba(0,0,0,.2)",
+					300: "rgba(0,0,0,.3)",
+					400: "rgba(0,0,0,.4)",
+					500: "rgba(0,0,0,.5)",
+					600: "rgba(0,0,0,.6)",
+					700: "rgba(0,0,0,.7)",
+					800: "rgba(0,0,0,.8)",
+					900: "rgba(0,0,0,.9)",
+					950: "rgba(0,0,0,.95)",
+				},
+			},
 		},
 	},
 	plugins: [require("@tailwindcss/typography"), require.resolve("prettier-plugin-astro")],
