@@ -1,7 +1,7 @@
 ---
-const { class: className } = Astro.props;
+const { class: className, ...props } = Astro.props;
 ---
 
-<a class:list={[className]}>
+<a {...props} class:list={[className]}>
 	<slot />
 </a>

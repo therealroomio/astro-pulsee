@@ -67,7 +67,7 @@ let contactSections = [
 
 <nav
 	x-data="{menuOpen: false, toggleOpenMenu: function() { this.menuOpen = !this.menuOpen; }}"
-	class="select-none px-8 w-full max-w-[50rem] cursor-pointer overflow-hidden z-10 fixed top-4 -translate-x-1/2 left-1/2">
+	class="select-none px-8 w-full max-w-[55rem] cursor-pointer overflow-hidden z-10 fixed top-4 -translate-x-1/2 left-1/2">
 	<div
 		@click="toggleOpenMenu()"
 		:class="{ 'open': menuOpen }"
@@ -145,7 +145,7 @@ let contactSections = [
 			background-color: transparent;
 		}
 		::-webkit-scrollbar-thumb {
-			background-color: #777;
+			background-color: hsla(0, 0%, 0%, 0.4);
 		}
 	}
 </style>
