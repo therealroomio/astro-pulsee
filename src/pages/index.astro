@@ -2,18 +2,45 @@
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
+import { Image } from "astro:assets";
+import handImg from "../assets/images/atlas-card-poster-end.webp";
 
 changeLanguage("en");
 ---
 
 <Layout>
-	<Container>
-		<div class="h-screen">Main content here</div>
-	</Container>
+	<div class="bg-gradient-to-b from-zinc-200 to-stone-300 flex flex-col items-center min-h-screen pt-32 pb-36 md:pb-52">
+		<section id="hero" class="w-full">
+			<div class="mix-blend-overlay text-black text-center pb-16 text-8xl">No Limits</div>
+			<div class="relative w-full pb-16 left-0">
+				<Image
+					alt="A hand holds the beautiful Atlas Card - the super-mirror finish surface reflects the light"
+					class="w-full"
+					src={handImg}
+					height="550"
+					width="1910"
+				/>
+			</div>
+			<Container class="text-3xl font-medium">
+				<div class="mix-blend-overlay center reveal">
+					This is your friend who scores the hottest tables in town, your passport to weekend getaways, and your guest pass to must-see
+					events. All brilliantly brought together in a card and app of uncompromising beauty and utility. This is the beginning of a
+					journey to a world with no limits.
+				</div>
+
+				<div class="text-black reveal">This is ZanK.</div>
+			</Container>
+		</section>
+	</div>
 	<Container class="bg-neutral-900 text-stone-100">
-		<div class="h-screen">Main content here</div>
+		<div class="h-screen reveal">Main content here</div>
 	</Container>
-	<Container class="stone-100">
-		<div class="h-screen">Main content here</div>
+	<Container class="bg-zinc-200">
+		<div class="h-screen reveal"></div>
+	</Container>
+	<Container class="bg-neutral-900">
+		<div class="h-screen reveal"></div>
 	</Container>
 </Layout>
+
+<style></style>
