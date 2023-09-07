@@ -70,7 +70,7 @@ let contactSections = [
 	class="select-none px-8 w-full max-w-[50rem] cursor-pointer overflow-hidden z-10 fixed top-4 -translate-x-1/2 left-1/2">
 	<div
 		@click="toggleOpenMenu()"
-		:class="menuOpen ? 'max-h-[100rem]': 'max-h-[2.95rem]'"
+		:class="{ 'open': menuOpen }"
 		class="rounded-lg cursor-pointer overflow-hidden transform transition duration-300 ease-in-out">
 		<div class="flex justify-between py-2 px-4 items-center">
 			<div class="text-neutral-100" style="transform: none;">
@@ -123,7 +123,11 @@ let contactSections = [
 		background-color: hsla(0, 0%, 94%, 0.322);
 		border-radius: 1rem;
 		box-shadow: 2px 4px 20px #0000000a;
-		transition: all 0.3s ease-out;
+		transition: all 0.3s ease-in-out;
+		max-height: 2.95rem;
+	}
+	nav > div.open {
+		max-height: 100rem;
 	}
 </style>
 
